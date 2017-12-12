@@ -1,0 +1,18 @@
+<mvc:View displayBlock="true" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+	controllerName="alfa.DataBindingExample.controller.ModelAndInterface" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:l="sap.ui.layout">
+	<Panel class="panelStyle" headerText="Взаимодействие модели и интерфейса" expandable="true" expanded="false">
+		<content>
+			<l:VerticalLayout width="100%">
+				<l:content>
+					<Label text="{i18n>firstName}" width="100%" id="__label0"/>
+					<Input width="100%" value="{inputData>/firstName}" valueLiveUpdate="true"/>
+					<Label text="{i18n>lastName}" width="100%" id="__label1"/>
+					<Input width="100%" id="__input1" value="{inputData>/lastName}" valueLiveUpdate="true"/>
+					<Label text="{i18n>midName}" width="100%"/>
+					<Input width="100%" value="{inputData>/midName}" valueLiveUpdate="true"/>
+					<Text width="100%" text="Введенное ФИО: {inputData>/lastName} {inputData&gt;/firstName} {inputData>/midName}"/>
+				</l:content>
+			</l:VerticalLayout>
+		</content>
+	</Panel>
+</mvc:View>

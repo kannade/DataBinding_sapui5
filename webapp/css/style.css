@@ -1,0 +1,25 @@
+/* Enter your custom styles here */
+.panelStyle .sapMPanelWrappingDiv{
+	background: -webkit-linear-gradient(bottom, rgb(121, 0, 0), rgb(222, 57, 52));
+}
+
+.panelStyle .sapMPanelExpandableIcon, .panelStyle .sapMPanelHdr{
+	color : whitesmoke;
+}
+
+.lstStyle .sapMSLIImgIcon{
+	margin-left: -8px;
+}
+
+.iconColorify{
+	color: rgb(222, 57, 52);
+}
+
+
+.redIcon .sapMSLIImgIcon{
+	color: rgb(222, 57, 52);
+}
+
+.blueIcon .sapMSLIImgIcon{
+	color: rgb(26, 54, 199);
+}

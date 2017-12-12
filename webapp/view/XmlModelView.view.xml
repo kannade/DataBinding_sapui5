@@ -1,0 +1,15 @@
+<mvc:View displayBlock="true" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml"
+	controllerName="alfa.DataBindingExample.controller.XmlModelView" xmlns:z="sap.ui.layout">
+	<Panel class="panelStyle" headerText="XML модель" expandable="true" expanded="false">
+		<content>
+			<z:VerticalLayout>
+				<Text text="Название магазина 2: {/stores/store/1/@name}"/>
+				<Text text="Количество продукта 2: {/stores/store/1/product/1/@count}"/>
+			</z:VerticalLayout>
+			<List headerText="Магазины" noDataText="Drop list items here" items="{/stores/store/}">
+				<StandardListItem type="Navigation" title="{@name}" description="{info/manager}" icon="sap-icon://picture"
+					counter="{ path: 'info/employees/text()', formatter : '.formatter.formatToInt' }"/>
+			</List>
+		</content>
+	</Panel>
+</mvc:View>

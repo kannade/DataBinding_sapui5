@@ -1,0 +1,109 @@
+{
+    "resources": [
+        {
+            "name": "i18n/i18n_ru_RU.properties",
+            "raw": "i18n/i18n.properties"
+        },
+        {
+            "name": "i18n/i18n.properties",
+            "raw": "i18n/i18n.properties"
+        },
+        {
+            "name": "manifest.json"
+        },
+        {
+            "name": "view/JsonModelView.view.xml"
+        },
+        {
+            "name": "view/ModelAndInterface.view.xml"
+        },
+        {
+            "name": "view/OdataModelView.view.xml"
+        },
+        {
+            "name": "view/XmlModelView.view.xml"
+        },
+        {
+            "name": "view/TableViewSettingsDialog.fragment.xml"
+        },
+        {
+            "name": "view/ResourceModelView.view.xml"
+        },
+        {
+            "name": "view/Detail.view.xml"
+        },
+        {
+            "name": "view/SortingAndFiltering.view.xml"
+        },
+        {
+            "name": "view/Formatting.view.xml"
+        },
+        {
+            "name": "view/Main.view.xml"
+        },
+        {
+            "name": "model/employees.json"
+        },
+        {
+            "name": "model/transliteration.js"
+        },
+        {
+            "name": "model/products.xml"
+        },
+        {
+            "name": "model/models.js"
+        },
+        {
+            "name": "model/formatter.js"
+        },
+        {
+            "name": "model/prod.json"
+        },
+        {
+            "name": "model/PersoService.js"
+        },
+        {
+            "name": "Component.js"
+        },
+        {
+            "name": "controller/Formatting.controller.js"
+        },
+        {
+            "name": "controller/OdataModelView.controller.js"
+        },
+        {
+            "name": "controller/Main.controller.js"
+        },
+        {
+            "name": "controller/SortingAndFiltering.controller.js"
+        },
+        {
+            "name": "controller/Detail.controller.js"
+        },
+        {
+            "name": "controller/ModelAndInterface.controller.js"
+        },
+        {
+            "name": "controller/XmlModelView.controller.js"
+        },
+        {
+            "name": "controller/ResourceModelView.controller.js"
+        },
+        {
+            "name": "controller/JsonModelView.controller.js"
+        },
+        {
+            "name": "index.html"
+        },
+        {
+            "name": "css/style.css"
+        },
+        {
+            "name": "Component-preload.js",
+            "merged": true
+        },
+        {
+            "name": "neo-app.json"
+        }
+    ]
+}

@@ -1,0 +1,84 @@
+<mvc:View displayBlock="true" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+	controllerName="alfa.DataBindingExample.controller.OdataModelView" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:t="sap.ui.table">
+	<Panel class="panelStyle" headerText="oData модель" expandable="true" expanded="false">
+		<content>
+			<Table selectionChange="onTblSel" mode="SingleSelectMaster" id="table0" headerText="Сотрудники"
+				items="{ path: '/Employees', parameters: { select : 'Photo, EmployeeID,LastName,FirstName,City,HireDate' }, sorter : { path : 'City', descending: false, group: '.getGroup' }, groupHeaderFactory: '.getGroupHeader' }">
+				<!--parameters: { select : 'Photo, EmployeeID,LastName,FirstName,City,HireDate' },-->
+				<items>
+					<ColumnListItem id="firstItem" press="onTblDetail">
+						<cells>
+							<Image src="{ path: 'Photo', formatter: '.formatter.formatImg' }"></Image>
+							<Text text="{LastName}"/>
+							<Text text="{FirstName}"/>
+							<DatePicker dateValue="{HireDate}" displayFormat="dd.MM.yyyy" editable="false"></DatePicker>
+						</cells>
+					</ColumnListItem>
+				</items>
+				<columns>
+					<Column hAlign="Center" width="10rem">
+						<header>
+							<Label text="Фото"/>
+						</header>
+					</Column>
+					<Column hAlign="Center" width="10rem">
+						<header>
+							<Label text="Фамилия"/>
+						</header>
+					</Column>
+					<Column hAlign="Center" width="10rem">
+						<header>
+							<Label text="Имя"/>
+						</header>
+					</Column>
+					<Column hAlign="Center" width="10rem">
+						<header>
+							<Label text="Дата приема"/>
+						</header>
+					</Column>
+				</columns>
+			</Table>
+			<t:Table id="tableDtl" class="sapUiMediumMarginTop" title="Заказы" sort="onSortTbl" filter="onFilterTbl">
+				<t:columns>
+					<t:Column id="orderIdCol" filterProperty="OrderID" sortProperty="OrderID" hAlign="Center" width="5rem">
+						<Label text="ID заказа"/>
+						<t:template>
+							<Text text="{OrderID}"/>
+						</t:template>
+					</t:Column>
+					<t:Column id="addrCol" filterProperty="ShipAddress" sortProperty="ShipPostalCode, ShipCountry, ShipCity" hAlign="Center" width="20rem">
+						<Label text="Адрес доставки"/>
+						<t:template>
+							<Text text="{ShipPostalCode} {ShipCountry}, {ShipCity}, {ShipAddress}"/>
+						</t:template>
+					</t:Column>
+					<t:Column hAlign="Center" width="10rem">
+						<Label text="Получатель"/>
+						<t:template>
+							<Text text="{ShipName}"/>
+						</t:template>
+					</t:Column>
+					<t:Column hAlign="Center" width="8rem">
+						<Label text="Дата заказа"/>
+						<t:template>
+							<Text text="{path: 'OrderDate', type: 'sap.ui.model.type.Date' }"/>
+						</t:template>
+					</t:Column>
+					<t:Column hAlign="Center" width="8rem">
+						<Label text="Дата поставки"/>
+						<t:template>
+							<Text text="{path: 'ShippedDate', type: 'sap.ui.model.type.Date' }"/>
+						</t:template>
+					</t:Column>
+					<t:Column hAlign="Center" width="5rem">
+						<Label text="Вес"/>
+						<t:template>
+							<Text text="{path: 'Freight', type: 'sap.ui.model.type.Float', formatOptions: { maxFractionDigits : 2 } }"/>
+						</t:template>
+					</t:Column>
+				</t:columns>
+			</t:Table>
+		</content>
+	</Panel>
+</mvc:View>
+<!--, parameters:{ select : 'LastName,FirstName' }-->

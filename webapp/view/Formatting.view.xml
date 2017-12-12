@@ -1,0 +1,59 @@
+<mvc:View displayBlock="true" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+	controllerName="alfa.DataBindingExample.controller.Formatting" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:form="sap.ui.layout.form">
+	<Panel class="panelStyle" headerText="Форматирование" expandable="true" expanded="false">
+		<content>
+			<form:SimpleForm editable="true" width="auto" class="sapUiResponsiveMargin" layout="ResponsiveGridLayout" labelSpanL="3" labelSpanM="3" emptySpanL="4"
+				emptySpanM="4" columnsL="1" columnsM="1" title="Стили форматирования чисел">
+				<form:content>
+					<Label text="С группировкой разрядов"/>
+					<Text
+						text="{ path: '/floatVal', type: 'sap.ui.model.type.Float', formatOptions: { groupingEnabled: true, groupingSeparator: ',', decimalSeparator: '.' } }"/>
+					<Label text="2 десятичных разряда"/>
+					<Text
+						text="{ path: '/floatVal', type: 'sap.ui.model.type.Float', formatOptions: { maxFractionDigits: 2, groupingEnabled: false, groupingSeparator: ',', decimalSeparator: '.' } }"/>
+					<Label text="C ведущими нулями"/>
+					<Text
+						text="{ path: '/floatVal', type: 'sap.ui.model.type.Float', formatOptions: { minIntegerDigits: 20, groupingEnabled: false, groupingSeparator: ',', decimalSeparator: '.' } }"/>
+				</form:content>
+			</form:SimpleForm>
+			<form:SimpleForm width="auto" class="sapUiResponsiveMargin" layout="ResponsiveGridLayout" labelSpanL="3" labelSpanM="3" emptySpanL="4"
+				emptySpanM="4" columnsL="1" columnsM="1" title="Стили форматирования дат" editable="true">
+				<form:content>
+					<Label text="Short"/>
+					<Text text="{ path: '/dateStr', type: 'sap.ui.model.type.Date', formatOptions: { style: 'short', source: { pattern: 'yyyy.MM.dd' } } }"/>
+					<Label text="Medium"/>
+					<Text text="{ path: '/dateStr', type: 'sap.ui.model.type.Date', formatOptions: { style: 'medium', source: { pattern: 'yyyy.MM.dd' } } }"/>
+					<Label text="Long"/>
+					<Text text="{ path: '/dateStr', type: 'sap.ui.model.type.Date', formatOptions: { style: 'long', source: { pattern: 'yyyy.MM.dd' } } }"/>
+					<Label text="Full"/>
+					<Text text="{ path: '/dateStr', type: 'sap.ui.model.type.Date', formatOptions: { style: 'full', source: { pattern: 'yyyy.MM.dd' } } }"/>
+					<Label text="Ввод даты (текстовое поле в модели)"/>
+					<DatePicker
+						value="{ path: '/dateStr', type: 'sap.ui.model.type.Date', formatOptions: { style: 'medium', source: { pattern: 'yyyy.MM.dd' } } }"/>
+					<Label text="Ввод даты (объект даты в модели)"/>
+					<DatePicker dateValue="{ path: '/date', formatOptions: { style: 'medium' } }"/>
+				</form:content>
+			</form:SimpleForm>
+			<form:SimpleForm editable="true" width="auto" class="sapUiResponsiveMargin" layout="ResponsiveGridLayout" labelSpanL="3" labelSpanM="3" emptySpanL="4"
+				emptySpanM="4" columnsL="1" columnsM="1" title="Относительное время">
+				<form:content>
+					<Label text="Относительное время"/>
+					<Text text="{ path: '/date', type: 'sap.ui.model.type.Date', formatOptions: { relative: true, relativeScale: 'auto' } }"/>
+				</form:content>
+			</form:SimpleForm>
+			<form:SimpleForm editable="true" width="auto" class="sapUiResponsiveMargin" layout="ResponsiveGridLayout" labelSpanL="3" labelSpanM="3" emptySpanL="4"
+				emptySpanM="4" columnsL="1" columnsM="1" title="Форматирование размера файлов">
+				<form:content>
+					<Label text="Размер файла"/>
+					<Text text="{ path: '/FileSize', type: 'sap.ui.model.type.FileSize', formatOptions : { binaryFilesize: false, minFractionDigits: 2 } }"/>
+				</form:content>
+			</form:SimpleForm>
+			<Link href="{ parts: [ 'inputData>/firstName', 'inputData>/lastName', 'inputData>/midName' ], formatter: '.formatMail' }"
+				text="{i18n>sendEmail}"/>
+			<List noDataText="Нет данных" id="__list0" items="{globalData>/result/education}" class="lstStyle">
+				<!--<StandardListItem icon="{ path : 'globalData>typeId', formatter : '.formatIcon' }" type="Navigation" title="{globalData>type}" description="{globalData>name}"/>-->
+				<StandardListItem icon="{ path : 'globalData>typeId', formatter : 'alfa.DataBindingExample.model.formatter.formatIcon' }" type="Navigation" title="{globalData>type}" description="{globalData>name}"/>
+			</List>
+		</content>
+	</Panel>
+</mvc:View>

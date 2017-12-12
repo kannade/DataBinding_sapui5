@@ -1,0 +1,12 @@
+<mvc:View displayBlock="true" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+	controllerName="alfa.DataBindingExample.controller.ResourceModelView" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:l="sap.ui.layout">
+	<Panel class="panelStyle" headerText="{i18n>panels.TitleRes}" expandable="true" expanded="false">
+		<content>
+			<l:VerticalLayout width="100%">
+				<l:content>
+					<Button text="Отобразить сообщение" press="onShowMessage"/>
+				</l:content>
+			</l:VerticalLayout>
+		</content>
+	</Panel>
+</mvc:View>

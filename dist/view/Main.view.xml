@@ -1,0 +1,33 @@
+<mvc:View xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns:sap.ui.layout="sap.ui.layout" xmlns="sap.m" controllerName="alfa.DataBindingExample.controller.Main" displayBlock="true">
+	<App id="app">
+		<pages>
+			<Page title="{i18n>title}">
+				<content>
+					<Panel class="panelStyle" headerText="Варианты binding-а" expandable="true" expanded="false">
+						<content>
+							<sap.ui.layout:VerticalLayout width="100%" id="__layout0">
+								<sap.ui.layout:content>
+									<Text text="{/greetingText}" id="__text4"/>
+									<Text text="{/greetingText2}"/>
+									<Text text="{globalData>/greetingText3}"/>
+									<Text text="{ path: 'globalData>/greetingText3' }"/>
+									<Text width="100%" text="{i18n>education}: {globalData>/result/education/1/type} {globalData&gt;/result/education/1/name}"/>
+								</sap.ui.layout:content>
+							</sap.ui.layout:VerticalLayout>
+						</content>
+					</Panel>
+					<mvc:XMLView viewName="alfa.DataBindingExample.view.XmlModelView"/>
+					<mvc:XMLView viewName="alfa.DataBindingExample.view.JsonModelView"/>
+					<mvc:XMLView viewName="alfa.DataBindingExample.view.OdataModelView"/>
+					<mvc:XMLView viewName="alfa.DataBindingExample.view.ResourceModelView"/>
+					<mvc:XMLView viewName="alfa.DataBindingExample.view.Formatting"/>
+					<mvc:XMLView viewName="alfa.DataBindingExample.view.ModelAndInterface"/>
+					<mvc:XMLView viewName="alfa.DataBindingExample.view.SortingAndFiltering"/>
+				</content>
+				<footer>
+					<Bar id="__bar0"/>
+				</footer>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

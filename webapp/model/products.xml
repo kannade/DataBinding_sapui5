@@ -1,0 +1,24 @@
+<root>
+	<stores>
+		<store name="Ленинский проспект">
+			<info>
+				<employees>45</employees>
+				<manager>Кузнецова Ирина Семеновна</manager>
+			</info>
+			<product count="123" price="54.99" weight="23.79">Яблоки</product>
+			<product count="54" price="103.99" weight="15.17">Груши</product>
+			<product count="95" price="65" weight="197">Апельсины</product>
+			<product count="4" price="165" weight="9">Манго</product>
+			<product count="144" price="85" weight="932">Грейпфруты</product>
+		</store>
+		<store name="Академическая">
+			<info>
+				<employees>25</employees>
+				<manager>Петрова Елена Ивановна</manager>
+			</info>
+			<product count="93" price="45" weight="23.79">Груши</product>
+			<product count="23" price="120" weight="321">Апельсины</product>
+			<product count="900" price="100" weight="153">Яблоки</product>
+		</store>
+	</stores>
+</root>

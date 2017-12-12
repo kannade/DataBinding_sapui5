@@ -1,0 +1,43 @@
+<mvc:View displayBlock="true" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+	controllerName="alfa.DataBindingExample.controller.JsonModelView" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:u="sap.ui.unified"
+	xmlns:z="sap.ui.layout">
+	<Panel class="panelStyle" headerText="JSON модель" expandable="true" expanded="false">
+		<content>
+			<z:VerticalLayout><Text text="Магазин 2: {/stores/1/name}"/>
+				<Text text="Количество продукта 2: {/stores/1/products/1/count}"/></z:VerticalLayout>
+			<List mode="SingleSelectMaster" headerText="Магазины" noDataText="Drop list items here" id="__list0" items="{/stores}"
+				selectionChange="onSelList">
+				<StandardListItem type="Navigation" title="{name}" description="{info/manager}" counter="{info/employees}" icon="sap-icon://picture"
+					id="__item0"/>
+			</List>
+			<Table id="table0" headerText="Продукты" items="{}">
+				<items>
+					<ColumnListItem id="firstItem" type="Navigation">
+						<cells>
+							<Text text="{name}"/>
+							<Text text="{count}"/>
+							<u:Currency value="{price}" currency="RUB" useSymbol="true"/>
+						</cells>
+					</ColumnListItem>
+				</items>
+				<columns>
+					<Column hAlign="Center" width="10rem">
+						<header>
+							<Label text="Название продукта"/>
+						</header>
+					</Column>
+					<Column hAlign="Center" width="10rem">
+						<header>
+							<Label text="Количество"/>
+						</header>
+					</Column>
+					<Column hAlign="Center" width="10rem">
+						<header>
+							<Label text="Цена"/>
+						</header>
+					</Column>
+				</columns>
+			</Table>
+		</content>
+	</Panel>
+</mvc:View>
